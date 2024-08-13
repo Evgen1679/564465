@@ -1,0 +1,43 @@
+```python
+import math
+
+def get_input():
+while True:
+try:
+num = int(input("Введите положительное целое число: "))
+if num < 0:
+print("Число должно быть положительным!")
+else:
+return num
+except ValueError:
+print("Ошибка! Введите целое число.")
+
+def factorial(num):
+if num == 0:
+return 1
+return num * factorial(num - 1)
+
+def optimized_factorial(num):
+return math.factorial(num)
+
+def main():
+num = get_input()
+
+# Вычисление факториала без оптимизации
+result = factorial(num)
+print(f"Факториал числа {num} равен {result}")
+
+# Вычисление факториала с оптимизацией
+optimized_result = optimized_factorial(num)
+print(f"Оптимизированный факториал числа {num} равен {optimized_result}")
+
+if __name__ == "__main__":
+main()
+```
+
+Пример работы программы:
+```
+Введите положительное целое число: 5
+Факториал числа 5 равен 120
+Оптимизированный факториал числа 5 равен 120
+```
